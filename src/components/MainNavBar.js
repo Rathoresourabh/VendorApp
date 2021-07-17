@@ -79,12 +79,15 @@ const useStyles = makeStyles((theme) => ({
       display: "none",
     },
   },
+  customColor: {
+    backgroundColor: "#282c34"
+  },
 }));
 
 export default function MainNavBar() {
-  const {user} = useContext(UserContext);  
-  const photo = user.photoURL ;
-  const name = user.displayName ;
+  const { user } = useContext(UserContext);
+  const photo = user.photoURL;
+  const name = user.displayName;
   const classes = useStyles();
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
@@ -163,7 +166,7 @@ export default function MainNavBar() {
 
   return (
     <div className={classes.grow}>
-      <AppBar position="static">
+      <AppBar position="static" className={classes.customColor}>
         <Toolbar>
           <IconButton
             edge="start"
